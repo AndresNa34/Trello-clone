@@ -1,0 +1,41 @@
+ng new trello-clone --routing --style=scss
+cd proyect name
+Install tailwind css
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+config files
+ng add @angular/cdk
+Maquetado
+icons
+Login
+ng g c pages/login --style=none --skip-tests
+Initial Router
+app.routes.ts
+<router-outlet/> main.html o similar.app.component.html.
+Login component initial
+angular.json
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+Plugin tailwind para forms
+ npm install -D @tailwindcss/forms
+tailwind.config.js
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
+format, responsive
+crear boton ng g c components/btn --skip-tests --style=none
+Crear colores personalizados
+tailwind.config.js
+ const colors = require('@tailwindcss/colors');
+  theme: {
+    extend:{
+      colors: {
+        success: colors.green,
+        primary: colors.blue,
+      }
+    }
+  },
+@Input() typeBtn: 'button' | 'reset' | 'submit' = 'button';
+Aditional config btn component
