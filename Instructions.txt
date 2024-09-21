@@ -38,4 +38,20 @@ tailwind.config.js
     }
   },
 @Input() typeBtn: 'button' | 'reset' | 'submit' = 'button';
+
 Aditional config btn component
+
+Angular CDK
+ng g c pages/boards --skip-tests --style=none
+ng g c components/navbar --skip-tests --style=none
+
+Paste navbar, add navbar to boards
+
+styles.sccs
+@import '@angular/cdk/overlay-prebuilt.css';
+
+navbar OverlayModule
+isOpen
+cdkOverlayOrigin
+ng-template
+paste dropdown v2
