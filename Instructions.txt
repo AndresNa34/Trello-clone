@@ -55,3 +55,14 @@ isOpen
 cdkOverlayOrigin
 ng-template
 paste dropdown v2
+
+Iconos
+PAgina de Fonts
+ng add @fortawesome/angular-fontawesome@<version>
+ng add @fortawesome/angular-fontawesome
+y, free
+agregamos los iconos fa-icon
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
+import {faBell, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
+
+Board component

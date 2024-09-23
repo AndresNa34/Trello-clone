@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+const { Container } = require('postcss');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -11,6 +12,16 @@ module.exports = {
       colors: {
         success: colors.green,
         primary: colors.blue,
+        danger: colors.red,
+      },
+      container:{
+        screens:{
+          sm:'640px',
+          md:'768px',
+          lg:'1040px',
+          xl:'1040px',
+          '2x1':'1536px',
+        }
       }
     }
   },
