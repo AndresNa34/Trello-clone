@@ -70,3 +70,19 @@ maquetado
 
 CDK accordion
 import {CdkAccordionModule} from '@angular/cdk/accordion'
+
+Drag and Drop
+ng g c pages/board --skip-tests --style=none
+import {DragDropModule} from '@angular/cdk/drag-drop'
+Board routing, app.routes.ts
+
+cdkDrag
+cdkDropList
+cdkDropList (cdkDropListDropped)="drop($event)"
+drop()
+moveItemInArray
+Todo.model
+*ng for
+moveItemInArray
+for anuimations
+styles:[
