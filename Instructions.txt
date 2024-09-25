@@ -124,7 +124,30 @@ import icons
 import fontawesone
 import btn component
 add close event to close button
+add gray to btn.component.ts
+text left
 
+Send data to modals
+openDialog() 
+(click)="openDialog(todo)"
+todo-dialog
+interface data
+
+todo: ToDo;
+
+  constructor(
+    private dialogRef: DialogRef<Data>,
+    @Inject(DIALOG_DATA) data: Data
+  ){
+    this.todo = data.todo;
+  }
+
+Send data from modal
+board.component.ts
+openDialog()
+todo-dialog.component
+close()
+add inputData, outputData
 
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import {DragDropModule, CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop'
 import {CommonModule} from '@angular/common'
 import { NavbarComponent } from "../../components/navbar/navbar.component";
@@ -114,11 +114,18 @@ export class BoardComponent {
     })
   }
 
-  openDialog(){
-    this.dialog.open(TodoDialogComponent,{
+  openDialog(todo: ToDo){
+    const dialogRef = this.dialog.open(TodoDialogComponent,{
       minWidth: '300px',
       maxWidth: '50%',
-      autoFocus: false
+      autoFocus: false,
+      data:{
+        todo: todo
+      }
+    });
+    //recibo la informacion del evento close
+    dialogRef.closed.subscribe(output => {
+      console.log(output);
     })
   }
 }

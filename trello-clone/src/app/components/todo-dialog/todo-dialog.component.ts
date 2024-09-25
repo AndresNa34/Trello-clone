@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { CommonModule} from '@angular/common'
-import {DialogRef} from '@angular/cdk/dialog'
+import {DialogRef, DIALOG_DATA} from '@angular/cdk/dialog'
 import { faClose, faCheckToSlot, faBars, faUser, faTag, faCheckSquare,faClock} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BtnComponent } from "../btn/btn.component";
+import {ToDo} from '../../models/todo.model'
+
+interface InputData{
+  todo: ToDo;
+}
+
+interface outputData{
+  rta:boolean;
+}
 
 @Component({
   selector: 'app-todo-dialog',
@@ -13,9 +22,13 @@ import { BtnComponent } from "../btn/btn.component";
 })
 export class TodoDialogComponent {
 
+  todo: ToDo;
+
   constructor(
-    private dialogRef: DialogRef
+    private dialogRef: DialogRef<outputData>,
+    @Inject(DIALOG_DATA) data: InputData
   ){
+    this.todo = data.todo;
   }
 
   faClose = faClose;
@@ -27,6 +40,10 @@ export class TodoDialogComponent {
   faClock = faClock;
 
   close(){
-    this.dialogRef.close();
+    this.dialogRef.close()
+  }
+
+  closeWithRta(rta: boolean){
+    this.dialogRef.close({rta});
   }
 }
