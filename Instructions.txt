@@ -148,6 +148,15 @@ openDialog()
 todo-dialog.component
 close()
 add inputData, outputData
+closeWithRta()
+(click)="closeWithRta"
+
+Virtual Scrolling
+
+Scroll normal
+ng g c pages/scroll --skip-tests --style=none
+app.route add scroll path
+paste
 
 
 
