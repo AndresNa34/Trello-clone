@@ -93,3 +93,14 @@ children [cdkDropListData]
 import transferArrayItem
 update drop()
 alto min min-h-[2.5rem] in the tailwind style
+
+Additional columns.
+create column model
+*ngFor="let column of columns"
+addColumn()
+Issue scroll horizontal
+shrink-0
+height issue <div class="flex flex-col h-full">
+flex **grow** items-start w-full h-full overflow-x-scroll
+
+modals/dialog

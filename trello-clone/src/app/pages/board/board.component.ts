@@ -3,6 +3,7 @@ import {DragDropModule, CdkDragDrop, moveItemInArray, transferArrayItem} from '@
 import {CommonModule} from '@angular/common'
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import {ToDo} from '../../models/todo.model'
+import {Column} from '../../models/column.model'
 
 
 @Component({
@@ -26,48 +27,63 @@ import {ToDo} from '../../models/todo.model'
 })
 export class BoardComponent {
 
-  todos: ToDo[] =[
+  columns: Column[] =[
     {
-      id: '1',
-      title: 'Task 1'
+      title: 'Todo',
+      todos:[
+        {
+          id: '1',
+          title: 'Task 1'
+        },
+        {
+          id: '2',
+          title: 'Task 2'
+        },
+        {
+          id: '3',
+          title: 'Task 3'
+        }
+      ]
     },
     {
-      id: '2',
-      title: 'Task 2'
+      title:'Doing',
+      todos: [
+        {
+          id: '4',
+          title: 'Task 4'
+        },
+        {
+          id: '5',
+          title: 'Task 5'
+        },{
+          id: '6',
+          title: 'Task 6'
+        }
+      ]
     },
     {
-      id: '3',
-      title: 'Task 3'
+      title: 'Done',
+      todos:[
+        {
+          id: '7',
+          title: 'Task 7'
+        },
+        {
+          id: '8',
+          title: 'Task 8'
+        },{
+          id: '9',
+          title: 'Task 9'
+        }
+      ]
     }
   ]
 
-  doing: ToDo[] = [
-    {
-      id: '4',
-      title: 'Task 4'
-    },
-    {
-      id: '5',
-      title: 'Task 5'
-    },{
-      id: '6',
-      title: 'Task 6'
-    }
-  ];
+  todos: ToDo[] =[]
 
-  done: ToDo[] = [
-    {
-      id: '7',
-      title: 'Task 7'
-    },
-    {
-      id: '8',
-      title: 'Task 8'
-    },{
-      id: '9',
-      title: 'Task 9'
-    }
-  ];
+  doing: ToDo[] = [];
+
+  done: ToDo[] = [];
 
 
   drop(event: CdkDragDrop<ToDo[]>){
@@ -81,5 +97,12 @@ export class BoardComponent {
         event.currentIndex
       )
     }
+  }
+  
+  addColumn(){
+    this.columns.push({
+      title: 'New Column',
+      todos: []
+    })
   }
 }
