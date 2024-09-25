@@ -4,6 +4,9 @@ import {CommonModule} from '@angular/common'
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import {ToDo} from '../../models/todo.model'
 import {Column} from '../../models/column.model'
+import {Dialog} from '@angular/cdk/dialog'
+import {TodoDialogComponent} from "../../components/todo-dialog/todo-dialog.component";
+
 
 
 @Component({
@@ -85,7 +88,12 @@ export class BoardComponent {
 
   done: ToDo[] = [];
 
+  constructor(
+    private dialog: Dialog
+  ){
 
+  }
+  
   drop(event: CdkDragDrop<ToDo[]>){
     if (event.previousContainer === event.container){
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -103,6 +111,14 @@ export class BoardComponent {
     this.columns.push({
       title: 'New Column',
       todos: []
+    })
+  }
+
+  openDialog(){
+    this.dialog.open(TodoDialogComponent,{
+      minWidth: '300px',
+      maxWidth: '50%',
+      autoFocus: false
     })
   }
 }

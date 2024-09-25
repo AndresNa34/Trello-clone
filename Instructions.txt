@@ -104,3 +104,28 @@ height issue <div class="flex flex-col h-full">
 flex **grow** items-start w-full h-full overflow-x-scroll
 
 modals/dialog
+import {DialogModule} from '@angular/cdk/dialog';
+ng g c components/todo-dialog --skip-tests --style=none
+import {Dialog} from '@angular/cdk/dialog'
+es un servicio, necesita inyeccion de dependencias
+  constructor(
+    private dialog: Dialog
+  ){
+    
+  }
+openDialog
+(click)="openDialog()"
+import {TodoDialogComponent} from "../../components/todo-dialog/todo-dialog.component";
+todo-dialog component
+import dialogRef, inyection
+close()
+paste Modal template
+import icons
+import fontawesone
+import btn component
+add close event to close button
+
+
+
+
+
