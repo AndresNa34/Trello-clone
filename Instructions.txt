@@ -86,3 +86,10 @@ Todo.model
 moveItemInArray
 for anuimations
 styles:[
+Overlay transfer
+add directive to the father
+cdkDropListGroup
+children [cdkDropListData]
+import transferArrayItem
+update drop()
+alto min min-h-[2.5rem] in the tailwind style
