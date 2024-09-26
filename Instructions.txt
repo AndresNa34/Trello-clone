@@ -157,7 +157,16 @@ Scroll normal
 ng g c pages/scroll --skip-tests --style=none
 app.route add scroll path
 paste
+Virtual scrolling
+<cdk-virtual-scroll-viewport>
+itemSize
+*cdkVirtualFor
 
-
+Tablas
+$ ng g c pages/table --skip-tests --style=none
+add routing
+Same api call
+<table cdk-table [dataSource]="products"></table>
+columns = []
 
 
