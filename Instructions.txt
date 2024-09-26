@@ -170,5 +170,11 @@ Same api call
 columns = []
 
 Estilos en tablas
+Estilado
+
+Data Sources en tablas
+create data-source.ts
+dataSource = new DataSourceProduct;
+
 
 
